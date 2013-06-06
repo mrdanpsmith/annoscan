@@ -3,6 +3,7 @@
   
   <scm>
     <developerConnection>scm:git:https://github.com/mrdanpsmith/annoscan.git</developerConnection>
+    <tag>annoscan-0.1.0</tag>
   </scm>
   
   <build>
@@ -25,7 +26,7 @@
 
   <groupId>com.annoscan.annotations</groupId>
   <artifactId>annoscan</artifactId>
-  <version>0.1.0-SNAPSHOT</version>
+  <version>0.1.0</version>
   <packaging>jar</packaging>
 
   <name>annoscan</name>
