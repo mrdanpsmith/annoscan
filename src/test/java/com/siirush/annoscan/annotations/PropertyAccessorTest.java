@@ -1,9 +1,11 @@
 package com.siirush.annoscan.annotations;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotSame;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,27 +38,27 @@ public class PropertyAccessorTest {
 	@Test
 	public void testEqualsWithMethod() throws NoSuchMethodException, SecurityException {
 		Method method = IncorrectAccessExample.class.getMethod("getInaccessibleField", new Class<?>[0]);
-		Assert.assertEquals(new PropertyAccessor(method),new PropertyAccessor(method));
+		assertEquals(new PropertyAccessor(method),new PropertyAccessor(method));
 	}
 	
 	@Test
 	public void testEqualsWithField() throws NoSuchFieldException, SecurityException {
 		Field field = IncorrectAccessExample.class.getField("accessibleField");
-		Assert.assertEquals(new PropertyAccessor(field),new PropertyAccessor(field));
+		assertEquals(new PropertyAccessor(field),new PropertyAccessor(field));
 	}
 	
 	@Test
 	public void testEqualsWithNotEqualObjects() throws NoSuchFieldException, SecurityException {
 		Field accessibleField = IncorrectAccessExample.class.getField("accessibleField");
 		Field inaccessibleField = IncorrectAccessExample.class.getDeclaredField("inaccessibleField");
-		Assert.assertNotSame(new PropertyAccessor(accessibleField), new PropertyAccessor(inaccessibleField));
+		assertNotSame(new PropertyAccessor(accessibleField), new PropertyAccessor(inaccessibleField));
 	}
 	
 	@Test
 	public void testEvaluatesCorrectly() throws NoSuchMethodException, SecurityException {
 		Method validAccessor = IncorrectAccessExample.class.getMethod("getInaccessibleField", new Class<?>[0]);
 		PropertyAccessor propertyAccessor = new PropertyAccessor(validAccessor);
-		Assert.assertEquals(example.getInaccessibleField(),propertyAccessor.getValue(example));
+		assertEquals(example.getInaccessibleField(),propertyAccessor.getValue(example));
 	}
 	
 	@Test(expected=PropertyAccessException.class)

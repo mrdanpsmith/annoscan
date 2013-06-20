@@ -1,5 +1,8 @@
 package com.siirush.annoscan.annotations;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -10,8 +13,6 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.SortedSet;
-
-import junit.framework.Assert;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -95,16 +96,16 @@ public class AnnotationScannerImplTest {
 		for (AnnotatedProperty<TestAnnotation> property: properties) {
 			annotations.add(property.getAnnotation());
 		}
-		Assert.assertTrue(annotations.contains(fieldAnnotation));
-		Assert.assertTrue(annotations.contains(getMethodWithoutFieldAnnotation));
-		Assert.assertTrue(annotations.contains(privateFieldWithGetterAnnotation));
+		assertTrue(annotations.contains(fieldAnnotation));
+		assertTrue(annotations.contains(getMethodWithoutFieldAnnotation));
+		assertTrue(annotations.contains(privateFieldWithGetterAnnotation));
 	}
 	
 	@Test
 	public void testGetAnnotatedPropertiesSortedSortsProperties() {
 		int i = 1;
 		for (AnnotatedProperty<TestAnnotation> property: sortedProperties) {
-			Assert.assertEquals(i++,property.getAnnotation().order());
+			assertEquals(i++,property.getAnnotation().order());
 		}
 	}
 	
@@ -114,8 +115,8 @@ public class AnnotationScannerImplTest {
 		for (AnnotatedProperty<TestAnnotation> property: properties) {
 			accessors.add(property.getPropertyAccessor());
 		}
-		Assert.assertTrue(accessors.contains(new PropertyAccessor(publicField)));
-		Assert.assertTrue(accessors.contains(new PropertyAccessor(privateFieldGetter)));
-		Assert.assertTrue(accessors.contains(new PropertyAccessor(methodWithoutField)));
+		assertTrue(accessors.contains(new PropertyAccessor(publicField)));
+		assertTrue(accessors.contains(new PropertyAccessor(privateFieldGetter)));
+		assertTrue(accessors.contains(new PropertyAccessor(methodWithoutField)));
 	}
 }
