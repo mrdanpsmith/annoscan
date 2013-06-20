@@ -1,4 +1,4 @@
-package com.annoscan.annotation;
+package com.siirush.annoscan.annotation;
 
 import java.lang.annotation.Annotation;
 import java.util.Comparator;

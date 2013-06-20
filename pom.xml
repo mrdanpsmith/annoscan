@@ -24,7 +24,7 @@
     </plugins>
   </build>
 
-  <groupId>com.annoscan.annotations</groupId>
+  <groupId>com.siirush.annoscan.annotations</groupId>
   <artifactId>annoscan</artifactId>
   <version>0.1.1-SNAPSHOT</version>
   <packaging>jar</packaging>

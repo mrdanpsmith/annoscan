@@ -1,10 +1,10 @@
-package com.annoscan.annotation;
+package com.siirush.annoscan.annotation;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import com.annoscan.annotation.exception.PropertyAccessException;
+import com.siirush.annoscan.annotation.exception.PropertyAccessException;
 
 public class PropertyAccessor {
 	public enum PropertyAccessType {

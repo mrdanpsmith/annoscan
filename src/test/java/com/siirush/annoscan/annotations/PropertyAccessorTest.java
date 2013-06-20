@@ -1,4 +1,4 @@
-package com.annoscan.annotations;
+package com.siirush.annoscan.annotations;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -7,8 +7,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.annoscan.annotation.PropertyAccessor;
-import com.annoscan.annotation.exception.PropertyAccessException;
+import com.siirush.annoscan.annotation.PropertyAccessor;
+import com.siirush.annoscan.annotation.exception.PropertyAccessException;
 
 public class PropertyAccessorTest {
 	public class IncorrectAccessExample {

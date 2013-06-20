@@ -1,4 +1,4 @@
-package com.annoscan.reflection;
+package com.siirush.annoscan.reflection;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;

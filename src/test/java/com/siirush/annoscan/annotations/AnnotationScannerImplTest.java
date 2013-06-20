@@ -1,4 +1,4 @@
-package com.annoscan.annotations;
+package com.siirush.annoscan.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -16,10 +16,10 @@ import junit.framework.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.annoscan.annotation.AnnotatedProperty;
-import com.annoscan.annotation.AnnotationScannerImpl;
-import com.annoscan.annotation.PropertyAccessor;
-import com.annoscan.reflection.GetterLocatorImpl;
+import com.siirush.annoscan.annotation.AnnotatedProperty;
+import com.siirush.annoscan.annotation.AnnotationScannerImpl;
+import com.siirush.annoscan.annotation.PropertyAccessor;
+import com.siirush.annoscan.reflection.GetterLocatorImpl;
 
 public class AnnotationScannerImplTest {
 	@Retention(RetentionPolicy.RUNTIME)

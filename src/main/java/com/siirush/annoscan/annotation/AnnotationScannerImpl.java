@@ -1,4 +1,4 @@
-package com.annoscan.annotation;
+package com.siirush.annoscan.annotation;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -13,7 +13,7 @@ import java.util.TreeSet;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
-import com.annoscan.reflection.GetterLocator;
+import com.siirush.annoscan.reflection.GetterLocator;
 
 @Singleton
 public class AnnotationScannerImpl implements AnnotationScanner {
