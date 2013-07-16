@@ -22,9 +22,8 @@ public class AnnotatedProperty<T extends Annotation> {
 	@Override
 	public boolean equals(Object obj) {
 		boolean equals;
-		if (obj instanceof AnnotatedProperty) {
-			@SuppressWarnings("rawtypes")
-			AnnotatedProperty other = (AnnotatedProperty)obj;
+		if (obj instanceof AnnotatedProperty<?>) {
+			AnnotatedProperty<?> other = (AnnotatedProperty<?>)obj;
 			equals = equals(other);
 		} else {
 			equals = false;
