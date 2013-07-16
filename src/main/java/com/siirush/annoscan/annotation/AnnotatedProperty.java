@@ -30,7 +30,7 @@ public class AnnotatedProperty<T extends Annotation> {
 		}
 		return equals;
 	}
-	private boolean equals(@SuppressWarnings("rawtypes") AnnotatedProperty other) {
+	private boolean equals(AnnotatedProperty<?> other) {
 		return annotation.equals(other.annotation) && propertyAccessor.equals(other.propertyAccessor);
 	}
 }
