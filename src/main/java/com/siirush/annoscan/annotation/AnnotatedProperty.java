@@ -9,9 +9,16 @@ public class AnnotatedProperty<T extends Annotation> {
 		this.annotation = annotation;
 		this.propertyAccessor = accessor;
 	}
+	
+	/**
+	 * @return Returns the annotation instance on the field.
+	 */
 	public T getAnnotation() {
 		return annotation;
 	}
+	/**
+	 * @return Returns the property accessor on the field.
+	 */
 	public PropertyAccessor getPropertyAccessor() {
 		return propertyAccessor;
 	}

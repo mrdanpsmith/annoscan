@@ -23,6 +23,10 @@ public class PropertyAccessor {
 		this.field = field;
 		this.method = null;
 	}
+	/**
+	 * @param target The object from which to get the value.
+	 * @return The underlying object's value for a field.
+	 */
 	public Object getValue(Object target) {
 		Exception thrown;
 		try {

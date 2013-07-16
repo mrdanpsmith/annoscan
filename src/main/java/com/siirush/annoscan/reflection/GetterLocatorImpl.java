@@ -21,7 +21,7 @@ public class GetterLocatorImpl implements GetterLocator {
 		throw new RuntimeException(thrown);
 	}
 
-	public String determineGetterMethodName(Field field) {
+	private String determineGetterMethodName(Field field) {
 		String getterName;
 		if (field.getClass().equals(boolean.class)) {
 			getterName = determineBooleanGetterName(field.getName());
