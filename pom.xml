@@ -17,8 +17,8 @@
   </licenses>
   
   <scm>
-    <tag>HEAD</tag>
-    <url>https://github.com/mrdanpsmith/annoscan</url>
+    <tag>@scm.tag@</tag>
+    <url>https://github.com/mrdanpsmith/annoscan/releases/tag/@scm.tag@</url>
     <connection>scm:git:https://github.com/mrdanpsmith/annoscan.git</connection>
     <developerConnection>scm:git:https://github.com/mrdanpsmith/annoscan.git</developerConnection>
   </scm>
