@@ -9,6 +9,7 @@ public interface AnnotationScanner {
 	/**
 	 * @param classToScan The class to scan for annotated properties.
 	 * @param annotationToFind The annotation class for which to scan.
+	 * @param <T> The annotation type.
 	 * @return An unordered set of properties found to have the annotation.
 	 */
 	<T extends Annotation> Set<AnnotatedProperty<T>> getAnnotatedProperties(
@@ -18,6 +19,7 @@ public interface AnnotationScanner {
 	 * @param classToScan The class to scan for annotated properties.
 	 * @param annotationToFind The annotation class for which to scan.
 	 * @param comparator The comparator to use in order to sort the annotated properties.
+	 * @param <T> The annotation type.
 	 * @return An ordered set of properties found to have the annotation.
 	 */
 	<T extends Annotation> SortedSet<AnnotatedProperty<T>> getAnnotatedPropertiesSorted(
