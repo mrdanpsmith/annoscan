@@ -1,10 +1,66 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  <groupId>com.siirush.annoscan.annotations</groupId>
+  <artifactId>annoscan</artifactId>
+  <version>0.1.2-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>annoscan</name>
+  <description>A reflection based annotation scanner.</description>
+  <url>http://github.com/mrdanpsmith/annoscan</url>
+  
+  <licenses>
+  	<license>
+  	  <name>MIT license</name>
+      <url>http://www.opensource.org/licenses/mit-license.php</url>
+  	</license>
+  </licenses>
   
   <scm>
-    <developerConnection>scm:git:https://github.com/mrdanpsmith/annoscan.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>@scm.tag@</tag>
+    <url>https://github.com/mrdanpsmith/annoscan</url>
+    <connection>scm:git:ssh://git@github.com:mrdanpsmith/annoscan.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:mrdanpsmith/annoscan.git</developerConnection>
   </scm>
+  
+  <developers>
+  	<developer>
+      <id>dan</id>
+      <name>Dan P. Smith</name>
+      <organization>Siirush</organization>
+      <organizationUrl>http://www.siirush.com</organizationUrl>
+    </developer>
+  </developers>
+  
+  <profiles>
+    <profile>
+      <id>release-sign-artifacts</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.4</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
   
   <build>
     <plugins>
@@ -21,16 +77,34 @@
           <compilerVersion>1.5</compilerVersion>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.2.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9.1</version>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
-
-  <groupId>com.siirush.annoscan.annotations</groupId>
-  <artifactId>annoscan</artifactId>
-  <version>0.1.2-SNAPSHOT</version>
-  <packaging>jar</packaging>
-
-  <name>annoscan</name>
-  <url>http://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

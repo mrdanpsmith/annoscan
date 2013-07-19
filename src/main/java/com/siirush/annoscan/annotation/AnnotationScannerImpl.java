@@ -24,12 +24,18 @@ public class AnnotationScannerImpl implements AnnotationScanner {
 		this.getterLocator = getterLocatorImpl;
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.siirush.annoscan.annotation.AnnotationScanner#getAnnotatedProperties(java.lang.Class, java.lang.Class)
+	 */
 	public <T extends Annotation> Set<AnnotatedProperty<T>> getAnnotatedProperties(Class<?> classToScan, Class<T> annotationToFind) {
 		Set<AnnotatedProperty<T>> properties = new HashSet<AnnotatedProperty<T>>();
 		populateAnnotatedProperties(classToScan, annotationToFind, properties);
 		return properties;
 	}
 	
+	/* (non-Javadoc)
+	 * @see com.siirush.annoscan.annotation.AnnotationScanner#getAnnotatedPropertiesSorted(java.lang.Class, java.lang.Class, java.util.Comparator)
+	 */
 	public <T extends Annotation> SortedSet<AnnotatedProperty<T>> getAnnotatedPropertiesSorted(Class<?> classToScan, Class<T> annotationToFind, Comparator<AnnotatedProperty<T>> comparator) {
 		SortedSet<AnnotatedProperty<T>> properties = new TreeSet<AnnotatedProperty<T>>(comparator);
 		populateAnnotatedProperties(classToScan, annotationToFind, properties);
@@ -55,7 +61,7 @@ public class AnnotationScannerImpl implements AnnotationScanner {
 		return annotatedFields;
 	}
 	
-	public PropertyAccessor createPropertyAccessor(Field field) {
+	private PropertyAccessor createPropertyAccessor(Field field) {
 		PropertyAccessor propertyAccessor;
 		if (Modifier.isPublic(field.getModifiers())) {
 			propertyAccessor = new PropertyAccessor(field);
