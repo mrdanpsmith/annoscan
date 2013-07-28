@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.siirush.annoscan.annotations</groupId>
   <artifactId>annoscan</artifactId>
-  <version>0.1.2</version>
+  <version>0.1.3-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>annoscan</name>
@@ -17,7 +17,7 @@
   </licenses>
   
   <scm>
-    <tag>annoscan-0.1.2</tag>
+    <tag>@scm.tag@</tag>
     <url>git@github.com:mrdanpsmith/annoscan.git</url>
     <connection>scm:git:git@github.com:mrdanpsmith/annoscan.git</connection>
     <developerConnection>scm:git:git@github.com:mrdanpsmith/annoscan.git</developerConnection>
