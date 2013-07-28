@@ -18,9 +18,9 @@
   
   <scm>
     <tag>@scm.tag@</tag>
-    <url>https://github.com/mrdanpsmith/annoscan</url>
-    <connection>scm:git:ssh://git@github.com:mrdanpsmith/annoscan.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com:mrdanpsmith/annoscan.git</developerConnection>
+    <url>git@github.com:mrdanpsmith/annoscan.git</url>
+    <connection>scm:git:git@github.com:mrdanpsmith/annoscan.git</connection>
+    <developerConnection>scm:git:git@github.com:mrdanpsmith/annoscan.git</developerConnection>
   </scm>
   
   <developers>
