@@ -8,7 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.siirush.annoscan.annotations</groupId>
   <artifactId>annoscan</artifactId>
-  <version>0.1.3-SNAPSHOT</version>
+  <version>0.1.3</version>
   <packaging>jar</packaging>
 
   <name>annoscan</name>
