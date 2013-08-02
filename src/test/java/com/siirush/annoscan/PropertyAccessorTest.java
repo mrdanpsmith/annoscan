@@ -1,4 +1,4 @@
-package com.siirush.annoscan.annotations;
+package com.siirush.annoscan;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotSame;
@@ -9,8 +9,8 @@ import java.lang.reflect.Method;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.siirush.annoscan.annotation.PropertyAccessor;
-import com.siirush.annoscan.annotation.exception.PropertyAccessException;
+import com.siirush.annoscan.PropertyAccessor;
+import com.siirush.annoscan.exception.PropertyAccessException;
 
 public class PropertyAccessorTest {
 	public class IncorrectAccessExample {

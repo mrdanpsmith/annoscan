@@ -1,11 +1,11 @@
-package com.siirush.annoscan.annotation;
+package com.siirush.annoscan;
 
 import java.lang.annotation.Annotation;
 import java.util.Comparator;
 import java.util.Set;
 import java.util.SortedSet;
 
-public interface AnnotationScanner {
+public interface AnnoScan {
 	/**
 	 * @param classToScan The class to scan for annotated properties.
 	 * @param annotationToFind The annotation class for which to scan.

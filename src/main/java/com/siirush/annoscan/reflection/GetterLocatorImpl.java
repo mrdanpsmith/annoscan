@@ -3,7 +3,13 @@ package com.siirush.annoscan.reflection;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
+import javax.inject.Singleton;
+
+@Singleton
 public class GetterLocatorImpl implements GetterLocator {
+	private static final String BOOLEAN_GETTER_PREFIX = "is";
+	private static final String STANDARD_GETTER_PREFIX = "get";
+	
 	public Method findGetterMethod(Field field) {
 		String getterName = determineGetterMethodName(field);
 		return getMethod(field.getDeclaringClass(),getterName);
@@ -22,20 +28,15 @@ public class GetterLocatorImpl implements GetterLocator {
 	}
 
 	private String determineGetterMethodName(Field field) {
-		String getterName;
-		if (field.getClass().equals(boolean.class)) {
-			getterName = determineBooleanGetterName(field.getName());
-		} else {
-			getterName = determineNonBooleanGetterName(field.getName());
-		}
-		return getterName;
+		String prefix = (field.getClass().equals(boolean.class)) ? BOOLEAN_GETTER_PREFIX : STANDARD_GETTER_PREFIX;
+		return buildGetterMethodName(prefix,field.getName());
 	}
 
-	private String determineNonBooleanGetterName(String fieldName) {
-		return "get" + fieldName.substring(0,1).toUpperCase() + fieldName.substring(1);
-	}
-
-	private String determineBooleanGetterName(String fieldName) {
-		return "is" + fieldName + fieldName.substring(0,1).toUpperCase() + fieldName.substring(1);
+	private String buildGetterMethodName(String prefix, String fieldName) {
+		StringBuilder sb = new StringBuilder();
+		sb.append(prefix);
+		sb.append(fieldName.substring(0,1).toUpperCase());
+		sb.append(fieldName.substring(1));
+		return sb.toString();
 	}
 }

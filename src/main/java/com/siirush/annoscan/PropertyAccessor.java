@@ -1,10 +1,10 @@
-package com.siirush.annoscan.annotation;
+package com.siirush.annoscan;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import com.siirush.annoscan.annotation.exception.PropertyAccessException;
+import com.siirush.annoscan.exception.PropertyAccessException;
 
 public class PropertyAccessor {
 	public enum PropertyAccessType {
@@ -39,6 +39,24 @@ public class PropertyAccessor {
 			thrown = e;
 		}
 		throw new PropertyAccessException(thrown);
+	}
+	/**
+	 * @return The method that will be called to access the property value.
+	 */
+	public Method getMethod() {
+		return method;
+	}
+	/**
+	 * @return The field that will be called to access the property value.
+	 */
+	public Field getField() {
+		return field;
+	}
+	/**
+	 * @return The type of access for the property value.
+	 */
+	public PropertyAccessType getPropertyAccessType() {
+		return propertyAccessType;
 	}
 	private Object getValueFromUnderlyingObject(Object target) throws IllegalArgumentException, IllegalAccessException, InvocationTargetException {
 		Object value;

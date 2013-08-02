@@ -1,4 +1,4 @@
-package com.siirush.annoscan.annotation;
+package com.siirush.annoscan;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
@@ -16,11 +16,11 @@ import javax.inject.Singleton;
 import com.siirush.annoscan.reflection.GetterLocator;
 
 @Singleton
-public class AnnotationScannerImpl implements AnnotationScanner {
+public class AnnoScanImpl implements AnnoScan {
 	private final GetterLocator getterLocator;
 	
 	@Inject
-	public AnnotationScannerImpl(GetterLocator getterLocatorImpl) {
+	public AnnoScanImpl(GetterLocator getterLocatorImpl) {
 		this.getterLocator = getterLocatorImpl;
 	}
 	

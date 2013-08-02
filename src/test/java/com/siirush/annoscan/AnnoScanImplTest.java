@@ -1,4 +1,4 @@
-package com.siirush.annoscan.annotations;
+package com.siirush.annoscan;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -17,12 +17,12 @@ import java.util.SortedSet;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.siirush.annoscan.annotation.AnnotatedProperty;
-import com.siirush.annoscan.annotation.AnnotationScannerImpl;
-import com.siirush.annoscan.annotation.PropertyAccessor;
+import com.siirush.annoscan.AnnotatedProperty;
+import com.siirush.annoscan.AnnoScanImpl;
+import com.siirush.annoscan.PropertyAccessor;
 import com.siirush.annoscan.reflection.GetterLocatorImpl;
 
-public class AnnotationScannerImplTest {
+public class AnnoScanImplTest {
 	@Retention(RetentionPolicy.RUNTIME)
 	@Target({ElementType.METHOD, ElementType.FIELD})	
 	@interface TestAnnotation {
@@ -72,13 +72,13 @@ public class AnnotationScannerImplTest {
 	Set<AnnotatedProperty<TestAnnotation>> properties;
 	SortedSet<AnnotatedProperty<TestAnnotation>> sortedProperties;
 	
-	AnnotationScannerImpl simpleAnnotationScanner;
+	AnnoScanImpl annoScan;
 	
 	@Before
 	public void setUp() throws SecurityException, NoSuchFieldException, NoSuchMethodException {
-		simpleAnnotationScanner = new AnnotationScannerImpl(new GetterLocatorImpl());
-		properties = simpleAnnotationScanner.getAnnotatedProperties(TestClass.class,TestAnnotation.class);
-		sortedProperties = simpleAnnotationScanner.getAnnotatedPropertiesSorted(TestClassWithSort.class, TestAnnotation.class, new TestAnnotationComparator());
+		annoScan = new AnnoScanImpl(new GetterLocatorImpl());
+		properties = annoScan.getAnnotatedProperties(TestClass.class,TestAnnotation.class);
+		sortedProperties = annoScan.getAnnotatedPropertiesSorted(TestClassWithSort.class, TestAnnotation.class, new TestAnnotationComparator());
 		
 		publicField = TestClass.class.getField("field");
 		methodWithoutField = TestClass.class.getMethod("getMethodWithoutField",new Class<?>[0]);

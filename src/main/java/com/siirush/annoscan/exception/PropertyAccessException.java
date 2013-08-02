@@ -1,4 +1,4 @@
-package com.siirush.annoscan.annotation.exception;
+package com.siirush.annoscan.exception;
 
 public class PropertyAccessException extends RuntimeException {
 	private static final long serialVersionUID = 2163630483408591390L;
